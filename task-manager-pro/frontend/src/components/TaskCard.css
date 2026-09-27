@@ -1,0 +1,103 @@
+.task-card {
+  padding: 24px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Borders Based on Priority */
+.task-card.priority-high {
+  border-left: 4px solid var(--accent-danger);
+}
+
+.task-card.priority-medium {
+  border-left: 4px solid var(--accent-warning);
+}
+
+.task-card.priority-low {
+  border-left: 4px solid var(--accent-primary);
+}
+
+/* Completed State */
+.task-card.completed-card {
+  border-left-color: var(--accent-success);
+  opacity: 0.75;
+}
+.task-card.completed-card:hover {
+  opacity: 1;
+}
+
+.task-card-content {
+  cursor: pointer;
+}
+
+.task-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+.task-title.strike-through {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-card-content:hover .task-title {
+  color: var(--accent-primary);
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  gap: 6px;
+  font-weight: 500;
+}
+
+.task-card-actions {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid var(--border-dim);
+  padding-top: 16px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.action-btn.complete:hover {
+  background: var(--accent-success);
+  border-color: var(--accent-success);
+  color: #fff;
+}
+
+.action-btn.undo:hover {
+  background: var(--accent-warning);
+  border-color: var(--accent-warning);
+  color: #fff;
+}
+
+.action-btn.delete-btn:hover {
+  background: var(--accent-danger);
+  border-color: var(--accent-danger);
+  color: #fff;
+}
